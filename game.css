@@ -1,0 +1,21 @@
+.gameWrap {}
+    .player {width:200px;height:200px;text-align: center; border: 1px solid #000;}
+    .player.left{float: left;}
+    .player.right {float: right;}
+        .score {font-size: 39px;}
+
+    .dice {width:200px; height:200px;text-align: center; border: 1px solid #000;margin: 0 auto;}
+    .dice p {}
+        .diceNum {font-size: 80px; font-weight: 500;}
+
+    .gameArea {clear: both;padding: 20px 0;background-color: #f1f1f1; width: 1300px;height:500px; margin: 0 auto; overflow: hidden;}
+        .startBtn { margin: 20px auto 30px auto;text-decoration: none; color: red;font-weight: 600;width: 150px; display: block;border: 1px solid red;text-align: center; height: 50px; line-height: 50px;font-size: 20px;transition: 0.3s all ease;}
+        .startBtn:hover {background-color: red; color:#fff;}
+        .startDice { margin: 20px auto 30px auto;text-decoration: none; color: blue;font-weight: 600;width: 150px; display: block;border: 1px solid blue;text-align: center; height: 50px; line-height: 50px;font-size: 20px;transition: 0.3s all ease;}
+        .startDice:hover {background-color: blue; color:#fff;}
+        .gAreaIn {overflow: hidden; width: 1000px; margin: 0 auto;}
+        .gAreaIn li {float:left;width: 140px;height: 140px;margin: 0 10px; border:1px solid #ddd; list-style-type: none;text-align: center; background-color: #fff;}
+
+        .reStart {display: none;margin: 20px auto 30px auto;text-decoration: none; color: green;font-weight: 600;width: 150px; border: 1px solid green;text-align: center; height: 50px; line-height: 50px;font-size: 20px;transition: 0.3s all ease;}
+        .player1.on1 {border: 2px solid red;}
+        .player2.on2 {border: 2px solid blue;}
