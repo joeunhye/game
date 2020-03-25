@@ -85,7 +85,7 @@ function throwDice() {
 		$('.player2').addClass('on2');
 	}
 	
-	$('#player1 .score').text(player1.bt);
+	$('#player1 .score').text(player1.bt); 
 	$('#player2 .score').text(player2.bt);
 	
 }
