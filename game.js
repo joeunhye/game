@@ -1,6 +1,6 @@
 let vegas = {};
 vegas.set = function() {
-
+	
 }
 
 let roundNum = 0; //게임 라운드
@@ -114,6 +114,7 @@ vegas.gameS = function(){
 			}
 
 			alert('게임 끝');
+			$(this).off();
 			$('.reStart').show(); //재시작 버튼
 
 		}else {
@@ -124,6 +125,7 @@ vegas.gameS = function(){
 
 }
 
+// 게임 재시작
 function reStart() {
 	
 }
