@@ -110,10 +110,11 @@ vegas.gameS = function(){
 			if(player1.bt > player2.bt) {
 				alert('player1 승리!');
 			}else if(player1.bt < player2.bt) {
-				alert('player2 승리!')
+				alert('player2 승리!');
 			}
 
 			alert('게임 끝');
+			$('.reStart').show(); //재시작 버튼
 
 		}else {
 			throwDice();			
@@ -121,8 +122,8 @@ vegas.gameS = function(){
 		
 	});
 
-	//게임 재시작
-	//$('.reStart').show();
-
 }
 
+function reStart() {
+	
+}
