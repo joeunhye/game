@@ -2,7 +2,6 @@
     .player {width:200px;height:200px;text-align: center; border: 1px solid #000;}
     .player.left{float: left;}
     .player.right {float: right;}
-
     #player1 h2 {color:red;}
     #player2 h2 {color:blue;}
         .score {font-size: 39px;}
@@ -18,6 +17,7 @@
         .startDice:hover {background-color: blue; color:#fff;}
         .gAreaIn {overflow: hidden; width: 1000px; margin: 0 auto;}
         .gAreaIn li {float:left;width: 140px;height: 140px;margin: 0 10px; border:1px solid #ddd; list-style-type: none;text-align: center; background-color: #fff;}
+        .gAreaIn li p {font-weight:600;}
 
         .reStart {display: none;margin: 20px auto 30px auto;text-decoration: none; font-weight: 600;width: 150px; border: 1px solid green;text-align: center; height: 50px; line-height: 50px;font-size: 20px;transition: 0.3s all ease;}
         .reStart a {text-decoration: none;color: green;}
@@ -25,4 +25,3 @@
         .reStart:hover a {color:#fff;}
         .player1.on1 {border: 2px solid red;}
         .player2.on2 {border: 2px solid blue;}
-        
