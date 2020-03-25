@@ -8,7 +8,7 @@ let player = 2; //플레이어 수
 let player1 = {bt : 100000};
 let player2 = {bt : 100000};
 let bettingTotal = 100000; //최초 배당 금액
-let betting = 20000; // 1회 배팅 금액
+let betting = 40000; // 1회 배팅 금액
 let btPlayerNum = 0; //배팅된 수
 let bettingN;
 let btIndex1;
@@ -32,7 +32,6 @@ function bettingS(bettingTotal,player) {
 		//$(this).append('<span class="btPlayer">배팅!'+ 1 + '</span>');
 
 		//배팅한 플레이어 수 찾기
-		//let btPlayer = $('.btPlayer');  
 		//let btPlayerNum = (btPlayer.length); // 배팅된 수
 		bettingN = $(this).index()+1; // 배팅된 카지노
 		console.log(bettingN);
@@ -104,7 +103,7 @@ vegas.gameS = function(){
 	$('.startDice').click(function() {
 		if(!$('.gAreaIn').hasClass('start')) {
 			alert('먼저 배팅을 진행해주세요.');
-		}else if(player1.bt <= 20000 || player2.bt <= 20000){
+		}else if(player1.bt <= 40000 || player2.bt <= 40000){
 			
 			//승자 확인
 			if(player1.bt > player2.bt) {
@@ -114,7 +113,7 @@ vegas.gameS = function(){
 			}
 
 			alert('게임 끝');
-			$(this).off();
+			$(this).hide();
 			$('.reStart').show(); //재시작 버튼
 
 		}else {
@@ -123,9 +122,32 @@ vegas.gameS = function(){
 		
 	});
 
+	// 게임 재시작
+	$('.reStart a').click(function() {
+		reStart();
+	});
+
 }
 
-// 게임 재시작
+
+// 게임 재시작...
 function reStart() {
+	bettingTotal = 100000; //최초 배당 금액 다시 세팅
+	player1.bt = 100000;
+	player2.bt = 100000;
+	btPlayerNum = 0;
+
+	$('.diceNum').text(''); //배팅 초기화
+
+	$('#player1 .score').text(player1.bt);
+	$('#player2 .score').text(player2.bt);
+
+	$('.player1').removeClass('on1');
+	$('.player2').removeClass('on2');
+	$('.gAreaIn li').removeClass();
+	$('.gAreaIn li .btPlayer').remove();
+
+	$('.reStart').hide();
+	$('.startDice').show();
 	
 }
