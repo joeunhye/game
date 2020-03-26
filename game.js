@@ -79,8 +79,7 @@ function reStart() {
 	player2.bt = 100000;
 	btPlayerNum = 0; //배팅한 플레이어 초기화
 
-	$('.diceNum').text(''); //배팅 초기화
-
+	$('.diceNum').text('');
 	$('#player1 .score').text(player1.bt);
 	$('#player2 .score').text(player2.bt);
 
