@@ -8,7 +8,7 @@ let player = 2; //플레이어 수
 let player1 = {bt : 100000};
 let player2 = {bt : 100000};
 let bettingTotal = 100000; //최초 배당 금액
-let betting = 40000; // 1회 배팅 금액
+let betting = 20000; // 1회 배팅 금액
 let btPlayerNum = 0; //배팅된 수
 let bettingN;
 let btIndex1;
@@ -34,12 +34,14 @@ function bettingS(bettingTotal) {
 			$(this).append('<span class="btPlayer">배팅' + btPlayerNum + '</span>');
 			$(this).addClass('player1');
 			btIndex1 = bettingN;
+			player1.bt = bettingTotal - betting;
 			$('#player1 .score').text(player1.bt);
 		}else if(btPlayerNum===1) {
 			btPlayerNum++;
 			$(this).append('<span class="btPlayer">배팅' + btPlayerNum + '</span>');
 			$(this).addClass('player2');
 			btIndex2 = bettingN;
+			player2.bt = bettingTotal - betting;
 			$('#player2 .score').text(player2.bt);
 		}else{
 			alert('배팅 끝');
@@ -85,6 +87,7 @@ function reStart() {
 
 	$('.player1').removeClass('on1');
 	$('.player2').removeClass('on2');
+	$('.gAreaIn').removeClass('start');
 	$('.gAreaIn li').removeClass();
 	$('.gAreaIn li .btPlayer').remove();
 
@@ -105,7 +108,7 @@ vegas.gameS = function(){
 	$('.startDice').click(function() {
 		if(!$('.gAreaIn').hasClass('start')) {
 			alert('먼저 배팅을 진행해주세요.');
-		}else if(player1.bt <= 40000 || player2.bt <= 40000){
+		}else if(player1.bt <= 20000 || player2.bt <= 20000){
 			
 			//승자 확인
 			if(player1.bt > player2.bt) {
@@ -115,6 +118,7 @@ vegas.gameS = function(){
 			}
 
 			alert('게임 끝!');
+			
 			$(this).hide();
 			$('.reStart').show(); //재시작 버튼
 

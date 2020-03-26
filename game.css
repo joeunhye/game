@@ -15,7 +15,7 @@
         .startBtn:hover {background-color: red; color:#fff;}
         .startDice { margin: 20px auto 30px auto;text-decoration: none; color: blue;font-weight: 600;width: 150px; display: block;border: 1px solid blue;text-align: center; height: 50px; line-height: 50px;font-size: 20px;transition: 0.3s all ease;}
         .startDice:hover {background-color: blue; color:#fff;}
-        .gAreaIn {overflow: hidden; width: 1000px; margin: 0 auto;}
+        .gAreaIn {overflow: hidden; width: 980px; margin: 0 auto; padding: 0;}
         .gAreaIn li {float:left;width: 140px;height: 140px;margin: 0 10px; border:1px solid #ddd; list-style-type: none;text-align: center; background-color: #fff;}
         .gAreaIn li p {font-weight:600;}
 
