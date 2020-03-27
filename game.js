@@ -54,7 +54,6 @@ function throwDice() {
 	let randomdice=(Math.floor(Math.random()*6)+1);
 
 	$('.diceNum').text(randomdice);
-	 
 	$('.player1').removeClass('on1');
 	$('.player2').removeClass('on2');
 
@@ -62,17 +61,19 @@ function throwDice() {
 		console.log('배팅1 당첨');
 		player1.bt += betting;
 		player2.bt -= betting;
+		//$('.point').text(+20000);
 		$('.player1').addClass('on1');
 		$('.player2').removeClass('on2');
-		$('.gAreaIn').addClass('potinAdd');// 득점 유무 확인 클래스
+		$('.gAreaIn').addClass('potinAdd'); // 득점 유무 확인 클래스
 
 	}else if(randomdice == btIndex2){
 		console.log('배팅2 당첨');
 		player1.bt -= betting;
 		player2.bt += betting;
+		//$('.point').text(+20000);
 		$('.player1').removeClass('on1');
 		$('.player2').addClass('on2');
-		$('.gAreaIn').addClass('potinAdd');// 득점 유무 확인 클래스
+		$('.gAreaIn').addClass('potinAdd'); // 득점 유무 확인 클래스
 
 	}
 	
