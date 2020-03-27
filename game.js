@@ -64,7 +64,7 @@ function throwDice() {
 		//$('.point').text(+20000);
 		$('.player1').addClass('on1');
 		$('.player2').removeClass('on2');
-		$('.gAreaIn').addClass('potinAdd'); // 득점 유무 확인 클래스
+		//$('.gAreaIn').addClass('potinAdd'); // 득점 유무 확인 클래스
 
 	}else if(randomdice == btIndex2){
 		console.log('배팅2 당첨');
@@ -73,7 +73,7 @@ function throwDice() {
 		//$('.point').text(+20000);
 		$('.player1').removeClass('on1');
 		$('.player2').addClass('on2');
-		$('.gAreaIn').addClass('potinAdd'); // 득점 유무 확인 클래스
+		//$('.gAreaIn').addClass('potinAdd'); // 득점 유무 확인 클래스
 
 	}
 	
