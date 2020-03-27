@@ -60,7 +60,6 @@ function throwDice() {
 		player2.bt -= betting;
 		$('.player1').addClass('on1');
 		$('.player2').removeClass('on2');
-		//reStart();
 
 	}else if(randomdice == btIndex2){
 		console.log('배팅2 당첨');
@@ -68,7 +67,6 @@ function throwDice() {
 		player2.bt += betting;
 		$('.player1').removeClass('on1');
 		$('.player2').addClass('on2');
-		//reStart();
 	}
 
 	$('#player1 .score').text(player1.bt); 
@@ -78,6 +76,28 @@ function throwDice() {
 
 // 게임 재시작(초기화)
 function reStart() {
+	bettingTotal = 100000; //최초 배당 금액 다시 세팅
+	player1.bt = 100000;
+	player2.bt = 100000;
+	btPlayerNum = 0; //배팅한 플레이어 초기화
+
+	$('.diceNum').text('');
+	$('#player1 .score').text(player1.bt);
+	$('#player2 .score').text(player2.bt);
+
+	$('.player1').removeClass('on1');
+	$('.player2').removeClass('on2');
+	$('.gAreaIn').removeClass('start');
+	$('.gAreaIn li').removeClass();
+	$('.gAreaIn li .btPlayer').remove();
+
+	$('.reStart').hide();
+	$('.startDice').show();
+	
+}
+
+// 게임 재세팅
+function reSeting() {
 	bettingTotal = 100000; //최초 배당 금액 다시 세팅
 	player1.bt = 100000;
 	player2.bt = 100000;
