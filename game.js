@@ -187,6 +187,3 @@ vegas.gameS = function(){
 	});
 
 }
-
-
-
