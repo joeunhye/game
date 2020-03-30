@@ -31,7 +31,8 @@ function bettingS(bettingTotal) {
 
 		$('#player1').removeClass('win');
 		$('#player2').removeClass('win');
-		//$('.gAreaIn li').removeClass();
+		$('.gAreaIn li').removeClass();
+		$('.comment').hide();
 
 		if(btPlayerNum===0) {
 			btPlayerNum++;
@@ -59,11 +60,12 @@ function throwDice() {
 	let diceImg = 'images/dice_0' + randomdice + '.png';
 	$('.diceImg').attr('src', diceImg);
 	$('.diceNum').text(randomdice);
-	// $('.player1').removeClass('on1');
-	// $('.player2').removeClass('on2');
 
 	if(randomdice == btIndex1){
 		console.log('배팅1 당첨');
+		$('.comment').show();
+		$('.comment p').text('배팅1 당첨!');
+		$('#player1 .point').text('+20000');
 		player1.bt += betting;
 		player2.bt -= betting;
 		$('#player1').addClass('win');
@@ -75,6 +77,9 @@ function throwDice() {
 
 	}else if(randomdice == btIndex2){
 		console.log('배팅2 당첨');
+		$('.comment').show();
+		$('.comment p').text('배팅2 당첨!');
+		$('#player2 .point').text('+20000');
 		player1.bt -= betting;
 		player2.bt += betting;
 		$('#player2').addClass('win');
@@ -110,7 +115,7 @@ function reBetting() {
 	// $('.player1').removeClass('on1');
 	// $('.player2').removeClass('on2');
 	$('.gAreaIn').removeClass('start');
-	//$('.gAreaIn li').removeClass();
+	$('.gAreaIn li').removeClass();
 	$('.gAreaIn li .btPlayer').remove();
 
 	$('.reStart').hide();

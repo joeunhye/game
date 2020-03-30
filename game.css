@@ -1,3 +1,4 @@
+html,body {height: 100%;margin:0;}
 .gameWrap {}
     .player {width:200px;height:200px;text-align: center; border: 1px solid #000;}
     .player.left{float: left;}
@@ -6,7 +7,8 @@
     #player1.win {border-color:red;}
     #player2 h2 {color:blue;}
     #player2.win {border-color:blue;}
-        .score {font-size: 39px;}
+        .score {margin-bottom:10px; font-size: 39px;}
+        .point {color:#989898;}
 
     .dice { position: relative; width:200px; height:200px;text-align: center; margin: 0 auto;}
     .dice p {}
