@@ -52,8 +52,9 @@ function bettingS(bettingTotal) {
 // 주사위 굴리기
 function throwDice() {
 	let randomdice=(Math.floor(Math.random()*6)+1);
-
+	let diceImg = 'images/dice_0' + randomdice + '.png';
 	$('.diceNum').text(randomdice);
+	$('.diceImg').attr('src', diceImg);
 	$('.player1').removeClass('on1');
 	$('.player2').removeClass('on2');
 
@@ -134,11 +135,14 @@ function reStart() {
 
 
 vegas.gameS = function(){
-
+	
 	// 게임 시작
 	$('.startBtn').click(function() {
 		bettingS(bettingTotal); // 최초 배당 금액 배분(10만불)
 		$(this).hide(); // 시작 버튼 감추기
+		$('.comment').hide();
+		$('.startDice').show();
+		$('.gAreaIn').show();
 	});
 
 	// 주사위 굴리기

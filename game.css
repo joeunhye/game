@@ -6,16 +6,19 @@
     #player2 h2 {color:blue;}
         .score {font-size: 39px;}
 
-    .dice {width:200px; height:200px;text-align: center; border: 1px solid #000;margin: 0 auto;}
+    .dice { position: relative; width:200px; height:200px;text-align: center; margin: 0 auto;}
     .dice p {}
-        .diceNum {font-size: 80px; font-weight: 500;}
+        .diceNum {font-size: 0px; font-weight: 500;}
+        .diceImg {position: absolute;top:35px;left:45px;width: 120px;}
 
     .gameArea {clear: both;padding: 20px 0;background-color: #f1f1f1; width: 1300px;height:500px; margin: 0 auto; overflow: hidden;}
         .startBtn { margin: 20px auto 30px auto;text-decoration: none; color: red;font-weight: 600;width: 150px; display: block;border: 1px solid red;text-align: center; height: 50px; line-height: 50px;font-size: 20px;transition: 0.3s all ease;}
         .startBtn:hover {background-color: red; color:#fff;}
-        .startDice { margin: 20px auto 30px auto;text-decoration: none; color: blue;font-weight: 600;width: 150px; display: block;border: 1px solid blue;text-align: center; height: 50px; line-height: 50px;font-size: 20px;transition: 0.3s all ease;}
-        .startDice:hover {background-color: blue; color:#fff;}
-        .gAreaIn {overflow: hidden; width: 980px; margin: 0 auto; padding: 0;}
+        .startDice {display: none; margin: 20px auto 30px auto;text-decoration: none; font-weight: 600;width: 150px;border: 1px solid blue;text-align: center; height: 50px; line-height: 50px;font-size: 20px;transition: 0.3s all ease;}
+        .startDice a {color: blue;text-decoration: none;}
+        .startDice:hover {background-color: blue;}
+        .startDice:hover a {color:#fff;}
+        .gAreaIn {display: none; overflow: hidden; width: 980px; margin: 0 auto; padding: 0;}
         .gAreaIn li {float:left;width: 140px;height: 140px;margin: 0 10px; border:1px solid #ddd; list-style-type: none;text-align: center; background-color: #fff;}
         .gAreaIn li p {font-weight:600;}
 
@@ -25,3 +28,5 @@
         .reStart:hover a {color:#fff;}
         .player1.on1 {border: 2px solid red;}
         .player2.on2 {border: 2px solid blue;}
+
+        .comment {text-align: center;}
