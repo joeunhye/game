@@ -31,7 +31,7 @@ function bettingS(bettingTotal) {
 
 		$('#player1').removeClass('win');
 		$('#player2').removeClass('win');
-		$('.gAreaIn li').removeClass();
+		//$('.gAreaIn li').removeClass();
 
 		if(btPlayerNum===0) {
 			btPlayerNum++;
