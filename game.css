@@ -3,7 +3,9 @@
     .player.left{float: left;}
     .player.right {float: right;}
     #player1 h2 {color:red;}
+    #player1.win {border-color:red;}
     #player2 h2 {color:blue;}
+    #player2.win {border-color:blue;}
         .score {font-size: 39px;}
 
     .dice { position: relative; width:200px; height:200px;text-align: center; margin: 0 auto;}

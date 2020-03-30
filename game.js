@@ -29,6 +29,10 @@ function bettingS(bettingTotal) {
 		$(this).parent().addClass('start'); //배팅 시작 유무 판별 클래스
 		bettingN = $(this).index()+1; // 배팅된 카지노 인덱스
 
+		$('#player1').removeClass('win');
+		$('#player2').removeClass('win');
+		$('.gAreaIn li').removeClass();
+
 		if(btPlayerNum===0) {
 			btPlayerNum++;
 			$(this).append('<span class="btPlayer">배팅' + btPlayerNum + '</span>');
@@ -44,7 +48,7 @@ function bettingS(bettingTotal) {
 			//player2.bt = bettingTotal - betting;
 			$('#player2 .score').text(player2.bt);
 		}else{
-			alert('배팅 끝');
+			alert('이미 배팅하셨습니다.');
 		}
 	});
 }
@@ -53,36 +57,40 @@ function bettingS(bettingTotal) {
 function throwDice() {
 	let randomdice=(Math.floor(Math.random()*6)+1);
 	let diceImg = 'images/dice_0' + randomdice + '.png';
-	$('.diceNum').text(randomdice);
 	$('.diceImg').attr('src', diceImg);
-	$('.player1').removeClass('on1');
-	$('.player2').removeClass('on2');
+	$('.diceNum').text(randomdice);
+	// $('.player1').removeClass('on1');
+	// $('.player2').removeClass('on2');
 
 	if(randomdice == btIndex1){
 		console.log('배팅1 당첨');
 		player1.bt += betting;
 		player2.bt -= betting;
-		//$('.point').text(+20000);
+		$('#player1').addClass('win');
 		$('.player1').addClass('on1');
 		$('.player2').removeClass('on2');
 		//$('.gAreaIn').addClass('potinAdd'); // 득점 유무 확인 클래스
+
+		reBetting();
 
 	}else if(randomdice == btIndex2){
 		console.log('배팅2 당첨');
 		player1.bt -= betting;
 		player2.bt += betting;
-		//$('.point').text(+20000);
+		$('#player2').addClass('win');
 		$('.player1').removeClass('on1');
 		$('.player2').addClass('on2');
 		//$('.gAreaIn').addClass('potinAdd'); // 득점 유무 확인 클래스
 
+		reBetting();
+
 	}
 	
-	if($('.gAreaIn').hasClass('potinAdd')) {
-		alert('재배팅');
-		$('.gAreaIn').removeClass('potinAdd');
-		reBetting();
-	}
+	// if($('.gAreaIn').hasClass('potinAdd')) {
+	// 	alert('재배팅');
+	// 	$('.gAreaIn').removeClass('potinAdd');
+	// 	reBetting();
+	// }
 	
 
 	$('#player1 .score').text(player1.bt); 
@@ -90,19 +98,19 @@ function throwDice() {
 
 }
 
-// 게임 재배팅
+// 게임 재배팅(일부 초기화)
 function reBetting() {
 	btPlayerNum = 0; //배팅한 플레이어 초기화
+	// $('#player1').removeClass('win');
+	// $('#player2').removeClass('win');
 	$('.gAreaIn').removeClass('potinAdd');
 
 	$('.diceNum').text('');
-	// $('#player1 .score').text(player1.bt);
-	// $('#player2 .score').text(player2.bt);
 
-	$('.player1').removeClass('on1');
-	$('.player2').removeClass('on2');
+	// $('.player1').removeClass('on1');
+	// $('.player2').removeClass('on2');
 	$('.gAreaIn').removeClass('start');
-	$('.gAreaIn li').removeClass();
+	//$('.gAreaIn li').removeClass();
 	$('.gAreaIn li .btPlayer').remove();
 
 	$('.reStart').hide();
@@ -110,7 +118,7 @@ function reBetting() {
 	
 }
 
-// 게임 재시작(초기화)
+// 게임 재시작(완전 초기화)
 function reStart() {
 	bettingTotal = 100000; //최초 배당 금액 다시 세팅
 	player1.bt = 100000;
@@ -131,8 +139,6 @@ function reStart() {
 	$('.startDice').show();
 	
 }
-
-
 
 vegas.gameS = function(){
 	
@@ -158,8 +164,7 @@ vegas.gameS = function(){
 				alert('player2 승리!');
 			}
 
-			alert('게임 끝!');
-			
+			alert('게임 종료!');
 			$(this).hide();
 			$('.reStart').show(); //재시작 버튼
 
