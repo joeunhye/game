@@ -33,6 +33,8 @@ function bettingS(bettingTotal) {
 		$('#player2').removeClass('win');
 		$('.gAreaIn li').removeClass();
 		$('.comment').hide();
+		$('#player1 .point').text('');
+		$('#player2 .point').text('');
 
 		if(btPlayerNum===0) {
 			btPlayerNum++;
@@ -90,7 +92,7 @@ function throwDice() {
 		reBetting();
 
 	}
-	
+
 	// if($('.gAreaIn').hasClass('potinAdd')) {
 	// 	alert('재배팅');
 	// 	$('.gAreaIn').removeClass('potinAdd');
