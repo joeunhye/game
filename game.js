@@ -36,7 +36,7 @@ function bettingS(bettingTotal) {
 		$('#player1 .point').text('');
 		$('#player2 .point').text('');
 
-
+		
 		if(btPlayerNum===0) {
 			btPlayerNum++;
 			$(this).append('<span class="btPlayer">배팅' + btPlayerNum + '</span>');
@@ -51,7 +51,7 @@ function bettingS(bettingTotal) {
 			btIndex2 = bettingN;
 			//player2.bt = bettingTotal - betting;
 			$('#player2 .score').text(player2.bt);
-			$(this).parent().addClass('start'); //배팅 시작 유무 판별 클래스
+			$(this).parent().addClass('start'); //배팅 완료 유무 판별 클래스
 		}else{
 			alert('이미 배팅하셨습니다.');
 		}
