@@ -21,7 +21,7 @@ html,body {height: 100%;margin:0;}
             .startBtn:active {position: relative; top: 5px; margin-bottom: 5px; box-shadow: none;}
             .startDice {display: none; margin: 20px auto 30px auto;text-decoration: none; font-weight: 600; background-color: #2b82ee; width: 150px;border-radius: 10px;box-shadow: 0 5px 0 #315e96;text-align: center; height: 50px; line-height: 50px;font-size: 20px;}
             .startDice a {display: block;color: #fff;text-decoration: none;}
-            .startDice:hover {background-color: #1f6ed1;}
+            .startDice:hover {background-color: #2d7bdb;}
             .startDice:active {position: relative; top: 5px; margin-bottom: 5px; box-shadow: none;}
             .gAreaIn {display: none; position: absolute;margin: auto; top: 0;left: 0;right: 0; bottom: -105px; height: 150px;overflow: hidden; width: 980px; padding: 0;}
             .gAreaIn li {float:left;width: 140px;height: 140px;margin: 0 10px; border:1px solid #ddd; list-style-type: none;text-align: center; background-color: #fff;}

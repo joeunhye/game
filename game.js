@@ -26,7 +26,7 @@ function bettingS(bettingTotal) {
 	// 플레이어 배팅 진행
 	$('.gAreaIn li').click(function() {
 
-		$(this).parent().addClass('start'); //배팅 시작 유무 판별 클래스
+		//$(this).parent().addClass('start'); //배팅 시작 유무 판별 클래스
 		bettingN = $(this).index()+1; // 배팅된 카지노 인덱스
 
 		$('#player1').removeClass('win');
@@ -51,6 +51,7 @@ function bettingS(bettingTotal) {
 			btIndex2 = bettingN;
 			//player2.bt = bettingTotal - betting;
 			$('#player2 .score').text(player2.bt);
+			$(this).parent().addClass('start'); //배팅 시작 유무 판별 클래스
 		}else{
 			alert('이미 배팅하셨습니다.');
 		}
