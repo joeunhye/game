@@ -36,6 +36,7 @@ function bettingS(bettingTotal) {
 		$('#player1 .point').text('');
 		$('#player2 .point').text('');
 
+
 		if(btPlayerNum===0) {
 			btPlayerNum++;
 			$(this).append('<span class="btPlayer">배팅' + btPlayerNum + '</span>');
@@ -68,6 +69,7 @@ function throwDice() {
 		$('.comment').show();
 		$('.comment p').text('배팅1 당첨!');
 		$('#player1 .point').text('+20000');
+		$('#player2 .point').text('-20000');
 		player1.bt += betting;
 		player2.bt -= betting;
 		$('#player1').addClass('win');
@@ -81,6 +83,7 @@ function throwDice() {
 		console.log('배팅2 당첨');
 		$('.comment').show();
 		$('.comment p').text('배팅2 당첨!');
+		$('#player1 .point').text('-20000');
 		$('#player2 .point').text('+20000');
 		player1.bt -= betting;
 		player2.bt += betting;

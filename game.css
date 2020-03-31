@@ -1,36 +1,38 @@
 html,body {height: 100%;margin:0;}
-.gameWrap {}
-    .player {width:200px;height:200px;text-align: center; border: 1px solid #000;}
+.gameWrap {height: 100%;}
+    .player {width:200px;height:200px;text-align: center; border: 1px solid #ddd;}
     .player.left{float: left;}
     .player.right {float: right;}
-    #player1 h2 {color:red;}
-    #player1.win {border-color:red;}
-    #player2 h2 {color:blue;}
-    #player2.win {border-color:blue;}
-        .score {margin-bottom:10px; font-size: 39px;}
+    #player1 h2 {color:#eb5118;}
+    #player1.win {border-color:#eb5118;}
+    #player2 h2 {color:#3e56de;}
+    #player2.win {border-color:#3e56de;}
+        .score {margin:30px 0; font-size: 39px;}
         .point {color:#989898;}
 
     .dice { position: relative; width:200px; height:200px;text-align: center; margin: 0 auto;}
     .dice p {}
         .diceNum {font-size: 0px; font-weight: 500;}
         .diceImg {position: absolute;top:35px;left:45px;width: 120px;}
+    .gameArea {position: relative;clear: both;padding: 50px 0 0;background-color: #f1f1f1; width: 1300px;height:500px; margin: 0 auto; overflow: hidden;}
+        .buttonArea {height:100px;}
+            .startBtn { margin: 20px auto 30px auto;text-decoration: none; color:#fff; background-color: #eb5118; border-radius: 10px;box-shadow: 0 5px 0 #af380c;font-weight: 600;width: 150px; display: block;text-align: center; height: 50px; line-height: 50px;font-size: 20px;}
+            .startBtn:hover {background-color: #d94813;}
+            .startBtn:active {position: relative; top: 5px; margin-bottom: 5px; box-shadow: none;}
+            .startDice {display: none; margin: 20px auto 30px auto;text-decoration: none; font-weight: 600; background-color: #2b82ee; width: 150px;border-radius: 10px;box-shadow: 0 5px 0 #315e96;text-align: center; height: 50px; line-height: 50px;font-size: 20px;}
+            .startDice a {display: block;color: #fff;text-decoration: none;}
+            .startDice:hover {background-color: #1f6ed1;}
+            .startDice:active {position: relative; top: 5px; margin-bottom: 5px; box-shadow: none;}
+            .gAreaIn {display: none; position: absolute;margin: auto; top: 0;left: 0;right: 0; bottom: -105px; height: 150px;overflow: hidden; width: 980px; padding: 0;}
+            .gAreaIn li {float:left;width: 140px;height: 140px;margin: 0 10px; border:1px solid #ddd; list-style-type: none;text-align: center; background-color: #fff;}
+            .gAreaIn li p {font-weight:600;}
 
-    .gameArea {clear: both;padding: 20px 0;background-color: #f1f1f1; width: 1300px;height:500px; margin: 0 auto; overflow: hidden;}
-        .startBtn { margin: 20px auto 30px auto;text-decoration: none; color: red;font-weight: 600;width: 150px; display: block;border: 1px solid red;text-align: center; height: 50px; line-height: 50px;font-size: 20px;transition: 0.3s all ease;}
-        .startBtn:hover {background-color: red; color:#fff;}
-        .startDice {display: none; margin: 20px auto 30px auto;text-decoration: none; font-weight: 600;width: 150px;border: 1px solid blue;text-align: center; height: 50px; line-height: 50px;font-size: 20px;transition: 0.3s all ease;}
-        .startDice a {color: blue;text-decoration: none;}
-        .startDice:hover {background-color: blue;}
-        .startDice:hover a {color:#fff;}
-        .gAreaIn {display: none; overflow: hidden; width: 980px; margin: 0 auto; padding: 0;}
-        .gAreaIn li {float:left;width: 140px;height: 140px;margin: 0 10px; border:1px solid #ddd; list-style-type: none;text-align: center; background-color: #fff;}
-        .gAreaIn li p {font-weight:600;}
+            .reStart {display: none;margin: 20px auto 30px auto;text-decoration: none; font-weight: 600;width: 150px; background-color: #168b16;border-radius: 10px;box-shadow: 0 5px 0 #156f15;text-align: center; height: 50px; line-height: 50px;font-size: 20px;}
+            .reStart a {display: block;text-decoration: none;color: #fff;}
+            .reStart:hover {background-color: green;}
+            .reStart:active {position: relative; top: 5px; margin-bottom: 5px; box-shadow: none;}
+            .player1.on1 {border: 2px solid #eb5118;}
+            .player2.on2 {border: 2px solid #3e56de;}
 
-        .reStart {display: none;margin: 20px auto 30px auto;text-decoration: none; font-weight: 600;width: 150px; border: 1px solid green;text-align: center; height: 50px; line-height: 50px;font-size: 20px;transition: 0.3s all ease;}
-        .reStart a {text-decoration: none;color: green;}
-        .reStart:hover {background-color: green;}
-        .reStart:hover a {color:#fff;}
-        .player1.on1 {border: 2px solid red;}
-        .player2.on2 {border: 2px solid blue;}
-
-        .comment {text-align: center;}
+            .comment {height:50px; text-align: center;}
+            .comment p {margin:0;}
