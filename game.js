@@ -91,7 +91,6 @@ function throwDice() {
 		$('.player2').addClass('on2');
 
 		reBetting();
-
 	}
 
 	$('#player1 .score').text(player1.bt); 
@@ -129,6 +128,8 @@ function reStart() {
 	$('.player2').removeClass('on2');
 	$('.gAreaIn').removeClass('start');
 	$('.gAreaIn li').removeClass();
+	$('#player1').removeClass('win');
+	$('#player2').removeClass('win');
 	$('.gAreaIn li .btPlayer').remove();
 
 	$('.reStart').hide();
@@ -155,16 +156,18 @@ vegas.gameS = function(){
 			
 			//승자 확인
 			if(player1.bt > player2.bt) {
-				alert('player1 승리!');
-				// $('.comment').show();
-				// $('.comment p').text('player1 승리!');
+				//alert('player1 승리!');
+				$('.comment').show();
+				$('.comment p').text('player1 승리!');
+				$('#player1').addClass('win');
 			}else if(player1.bt < player2.bt) {
-				alert('player2 승리!');
-				// $('.comment').show();
-				// $('.comment p').text('player2 승리!');
+				//alert('player2 승리!');
+				$('.comment').show();
+				$('.comment p').text('player2 승리!');
+				$('#player2').addClass('win');
 			}
 
-			alert('게임 종료!');
+			//alert('게임 종료!');
 			$(this).hide();
 			$('.reStart').show(); //재시작 버튼
 
