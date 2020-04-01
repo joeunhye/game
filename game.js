@@ -8,7 +8,7 @@ let player = 2; //플레이어 수
 let player1 = {bt : 100000};
 let player2 = {bt : 100000};
 let bettingTotal = 100000; //최초 배당 금액
-let betting = 20000; // 1회 배팅 금액
+let betting = 40000; // 1회 배팅 금액
 let btPlayerNum = 0; //배팅된 수
 let bettingN;
 let btIndex1;
@@ -151,13 +151,17 @@ vegas.gameS = function(){
 	$('.startDice').click(function() {
 		if(!$('.gAreaIn').hasClass('start')) {
 			alert('먼저 배팅을 진행해주세요.');
-		}else if(player1.bt <= 20000 || player2.bt <= 20000){
+		}else if(player1.bt <= 40000 || player2.bt <= 40000){
 			
 			//승자 확인
 			if(player1.bt > player2.bt) {
 				alert('player1 승리!');
+				// $('.comment').show();
+				// $('.comment p').text('player1 승리!');
 			}else if(player1.bt < player2.bt) {
 				alert('player2 승리!');
+				// $('.comment').show();
+				// $('.comment p').text('player2 승리!');
 			}
 
 			alert('게임 종료!');
