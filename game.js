@@ -26,7 +26,6 @@ function bettingS(bettingTotal) {
 	// 플레이어 배팅 진행
 	$('.gAreaIn li').click(function() {
 
-		//$(this).parent().addClass('start'); //배팅 시작 유무 판별 클래스
 		bettingN = $(this).index()+1; // 배팅된 카지노 인덱스
 
 		$('#player1').removeClass('win');
@@ -36,7 +35,6 @@ function bettingS(bettingTotal) {
 		$('#player1 .point').text('');
 		$('#player2 .point').text('');
 
-		
 		if(btPlayerNum===0) {
 			btPlayerNum++;
 			$(this).append('<span class="btPlayer">배팅' + btPlayerNum + '</span>');
@@ -51,10 +49,11 @@ function bettingS(bettingTotal) {
 			btIndex2 = bettingN;
 			//player2.bt = bettingTotal - betting;
 			$('#player2 .score').text(player2.bt);
-			$(this).parent().addClass('start'); //배팅 완료 유무 판별 클래스
+			$(this).parent().addClass('start'); //모든 플레이어 배팅 완료 유무 판별 클래스
 		}else{
 			alert('이미 배팅하셨습니다.');
 		}
+
 	});
 }
 
@@ -76,7 +75,6 @@ function throwDice() {
 		$('#player1').addClass('win');
 		$('.player1').addClass('on1');
 		$('.player2').removeClass('on2');
-		//$('.gAreaIn').addClass('potinAdd'); // 득점 유무 확인 클래스
 
 		reBetting();
 
@@ -91,18 +89,10 @@ function throwDice() {
 		$('#player2').addClass('win');
 		$('.player1').removeClass('on1');
 		$('.player2').addClass('on2');
-		//$('.gAreaIn').addClass('potinAdd'); // 득점 유무 확인 클래스
 
 		reBetting();
 
 	}
-
-	// if($('.gAreaIn').hasClass('potinAdd')) {
-	// 	alert('재배팅');
-	// 	$('.gAreaIn').removeClass('potinAdd');
-	// 	reBetting();
-	// }
-	
 
 	$('#player1 .score').text(player1.bt); 
 	$('#player2 .score').text(player2.bt);
@@ -112,14 +102,9 @@ function throwDice() {
 // 게임 재배팅(일부 초기화)
 function reBetting() {
 	btPlayerNum = 0; //배팅한 플레이어 초기화
-	// $('#player1').removeClass('win');
-	// $('#player2').removeClass('win');
-	$('.gAreaIn').removeClass('potinAdd');
 
 	$('.diceNum').text('');
 
-	// $('.player1').removeClass('on1');
-	// $('.player2').removeClass('on2');
 	$('.gAreaIn').removeClass('start');
 	$('.gAreaIn li').removeClass();
 	$('.gAreaIn li .btPlayer').remove();
