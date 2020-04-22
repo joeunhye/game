@@ -23,8 +23,8 @@ a:hover {cursor: url(images/pointer2.png), auto;}
         .diceImg {position: absolute;top:35px;left:35px;}
     .gameArea {position: absolute; margin: auto;left: 0; right: 0;clear: both;padding: 50px 0 0; width: 1300px;height:500px; margin: 0 auto; overflow: hidden;}
         .buttonArea {height:100px;}
-        .playChBtn { margin: 20px auto 30px auto;text-decoration: none; color:#fff; background-color: #eb5118; border-radius: 10px;box-shadow: 0 5px 0 #af380c;font-weight: 600;width: 150px; display: block;text-align: center; height: 50px; line-height: 50px;font-size: 20px;}
-        .playChBtn:hover {background-color: #d94813;}
+        .playChBtn { margin: 20px auto 30px auto;text-decoration: none; color:#fff; background-color: #f3218a; border-radius: 10px;box-shadow: 0 5px 0 #c91e73;font-weight: 600;width: 150px; display: block;text-align: center; height: 50px; line-height: 50px;font-size: 20px;}
+        .playChBtn:hover {background-color: #d11e78;}
         .playChBtn:active {position: relative; top: 5px; margin-bottom: 5px; box-shadow: none;}
 
             .startBtn { margin: 40px auto 30px auto;text-decoration: none; color:#fff; background-color: #eb5118; border-radius: 10px;box-shadow: 0 5px 0 #af380c;font-weight: 600;width: 150px; display: block;text-align: center; height: 50px; line-height: 50px;font-size: 20px;}
@@ -64,7 +64,7 @@ a:hover {cursor: url(images/pointer2.png), auto;}
 /*3D dice*/
  @keyframes Rot {
 	from {
-		transform:rotateX(0) rotateY(0) rotateZ(0);
+		transform: rotateX(0) rotateY(0) rotateZ(0);
 	}
 	to {
 		transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg);
@@ -72,31 +72,9 @@ a:hover {cursor: url(images/pointer2.png), auto;}
 }
 
 .diceWrap {}
-.dice_3d{
-    transform-style: preserve-3d;width: 200px;height: 200px;position: relative;
-	animation-name:Rot;
-	/* 왓다갓다 */
-	animation-direction:alternate;
-	/* 시간 */
-	animation-duration:5s;
-	/* 무한 반복 */
-	animation-iteration-count:infinite;
-	/* 한줄로 */
-	animation:Rot 10s ease 0.5s infinite;
-	top:-130px;
-	font-size:150px;
-	text-align:center;
-	line-height:200px;    
-    margin: auto;}
-
-.dice_3d div{    width: 200px;
-    height: 200px;
-    position: absolute;
-    left: 0;
-    top: 0;opacity: 1;
-    backface-visibility: hidden;}
-
-
+.dice_3d{transform-style: preserve-3d;width: 200px;height: 200px;position: relative;animation-name:Rot;/* 왓다갓다 */
+    animation-direction:alternate;animation-duration:5s;animation-iteration-count:infinite;top:-130px;font-size:150px;text-align:center;line-height:200px; margin: auto;}
+.dice_3d div{width: 200px;height: 200px; position: absolute; left: 0; top: 0;opacity: 1; backface-visibility: hidden;}
 /*.dice_3d {transform-style: preserve-3d;perspective: 2000px;}*/
 /*.dice_3d div {position: absolute;top: 72px;left: 0px;width: 200px; height: 200px;background-color: #fff;border: 1px solid #ddd; opacity: 1;}*/
 .dice_3d .dice1 {transform: rotateY(0deg) translate3d(0, 0, 100px);}
@@ -105,4 +83,10 @@ a:hover {cursor: url(images/pointer2.png), auto;}
 .dice_3d .dice4 {transform: rotateY(270deg) translate3d(0, 0, 100px);}
 .dice_3d .dice5 {transform: rotateX(90deg) translate3d(0, 0, 100px);}
 .dice_3d .dice6 {transform: rotateX(270deg) translate3d(0, 0, 100px);}
-	.dice3dImg {width:100%;}
+    .dice3dImg {width:100%;}
+    
+
+/*popup*/
+.popup {display: none; position: fixed; left:0; right:0; top:45%; bottom:0; width:500px; height: 300px; margin: auto; background-color: rgba(0,0,0,0.5); z-index: 99999;}
+    .popupIn {height:278px; margin:10px; border: 1px solid rgba(225,225,225,0.5);}
+    .popupIn p {margin:90px 0; text-align: center; font-size: 18px; color:#fff;}

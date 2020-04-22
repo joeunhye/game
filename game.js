@@ -15,6 +15,7 @@ let btIndex1;
 let btIndex2;
 let btPlayerCh = 0; //선택된 캐릭터 수
 
+
 $(document).ready(function () {
 	vegas.gameS(); //game start!
 });
@@ -162,8 +163,33 @@ function playerSelect() {
 	});
 }
 
+//텍스트 랜덤 노출
+function randomTxtS() {
+	let chatPopWin = ['으으 분하군...', '이런!!!' ];
+	let chatPopLose = ['후훗!!', '럭키가이~' ];
+	let randomTxt=(Math.floor(Math.random()*6));
+	let txtOutputWin = chatPopWin[randomTxt];
+	let txtOutputLose = chatPopLose[randomTxt];
+	console.log(txtOutputWin);
+	console.log(txtOutputLose);
+
+	for(var i = 0; i<10; i ++) {
+		let randomN=(Math.floor(Math.random()*6));
+	}
+
+	$('.popup').fadeIn();
+    // $('.popupIn p').text(popTxtOut);
+ 
+ }
+
+ function popup() {
+	 $('.closeBtn').click(function() {
+		$('.popup').fadeOut();
+	 });
+ }
+
 vegas.gameS = function(){
-	
+	popup();
 	// 게임 시작
 	$('.startBtn').click(function() {
 		playerSelect(); //캐릭터 선택
@@ -200,7 +226,6 @@ vegas.gameS = function(){
 				$('#player2').addClass('win');
 			}
 
-			//alert('게임 종료!');
 			$(this).hide();
 			$('.reStart').show(); //재시작 버튼
 
