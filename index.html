@@ -16,22 +16,59 @@
 
 <body>
     <div class="gameWrap">
+    <!--intro-->
+    <div class="intro">
+        <h1 class="introTitle"><img src="images/title.png" class="titleImg" /></h1>
+    </div>
 
+    <!--캐릭터 선택-->
+    <div class="playerSelect">
+        <p>플레이 할 캐릭터를 선택해주세요.</p>
+        <ul>
+            <li><img src="images/player1.png" /></li>
+            <li><img src="images/player2.png" /></li>
+            <li><img src="images/player3.png" /></li>
+            <li><img src="images/player4.png" /></li>
+            <li><img src="images/player5.png" /></li>
+            <li><img src="images/player6.png" /></li>
+        </ul>
+
+        <a href="javascript:void(0);" class="playChBtn btn">선택완료!</a>
+    </div>
         <!--player-->
-        <div class="player left" id="player1">
-            <h2>Player1</h2>
-            <p class="score">0</p>
-            <span class="point"></span>
+        <div class="playerArea">
+            <div class="player left" id="player1">
+                <img src="images/noPlayer.png" class="player1Img" />
+                <p class="chat"></p>
+                <h2>Player1</h2>
+                <p class="score">0</p>
+                <span class="point"></span>
+            </div>
+            <div class="player right" id="player2">
+                <img src="images/noPlayer.png" class="player2Img" />
+                <p class="chat"></p>
+                <h2>Player2</h2>
+                <p class="score">0</p>
+                <span class="point"></span>
+            </div>
+    
+            <div class="dice">
+                <span class="diceNum"></span>
+                <img src="images/dice_01.png" class="diceImg" />
+            </div>
         </div>
-        <div class="player right" id="player2">
-            <h2>Player2</h2>
-            <p class="score">0</p>
-            <span class="point"></span>
-        </div>
-
-        <div class="dice">
-            <span class="diceNum"></span>
-            <img src="images/dice_01.png" class="diceImg" />
+        
+        
+        <!--3D dice-->
+        <div class="diceWrap">
+            <div class="dice_3d">
+                <div class="dice1"><img src="images/dice1.png" class="dice3dImg" /></div>
+                <div class="dice2"><img src="images/dice2.png" class="dice3dImg" /></div>
+                <div class="dice3"><img src="images/dice3.png" class="dice3dImg" /></div>
+                <div class="dice4"><img src="images/dice4.png" class="dice3dImg" /></div>
+                <div class="dice5"><img src="images/dice5.png" class="dice3dImg" /></div>
+                <div class="dice6"><img src="images/dice6.png" class="dice3dImg" /></div>
+            </div>
         </div>
 
         <div class="gameArea">

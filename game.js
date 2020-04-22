@@ -13,6 +13,7 @@ let btPlayerNum = 0; //배팅된 수
 let bettingN;
 let btIndex1;
 let btIndex2;
+let btPlayerCh = 0; //선택된 캐릭터 수
 
 $(document).ready(function () {
 	vegas.gameS(); //game start!
@@ -63,6 +64,7 @@ function throwDice() {
 	let diceImg = 'images/dice_0' + randomdice + '.png';
 	$('.diceImg').attr('src', diceImg);
 	$('.diceNum').text(randomdice);
+	$('.player .chat span').hide();
 
 	if(randomdice == btIndex1){
 		console.log('배팅1 당첨');
@@ -75,6 +77,8 @@ function throwDice() {
 		$('#player1').addClass('win');
 		$('.player1').addClass('on1');
 		$('.player2').removeClass('on2');
+		$('#player1 .chat').append('<span>' + '후훗...!!' + '</span>');
+		$('#player2 .chat').append('<span>' + '으으 분하군...!!' + '</span>');
 
 		reBetting();
 
@@ -89,6 +93,9 @@ function throwDice() {
 		$('#player2').addClass('win');
 		$('.player1').removeClass('on1');
 		$('.player2').addClass('on2');
+		$('#player2 .chat').append('<span>' + '후훗...!!' + '</span>');
+		$('#player1 .chat').append('<span>' + '으으 분하군...!!' + '</span>');
+
 
 		reBetting();
 	}
@@ -137,15 +144,50 @@ function reStart() {
 	
 }
 
+//캐릭터 선택
+function playerSelect() {
+	$('.playerArea').css('opacity',0);
+	$('.diceWrap').hide();
+	$('.gameArea').hide();
+	$('.playerSelect').show();
+	$('.playerSelect li').click(function() {
+		let selImgIdx = $(this).index()+1;
+		let selImg = 'images/player' + selImgIdx + '.png';
+		
+
+		if(btPlayerCh===0) {
+			btPlayerCh++;
+			$('#player1 img').attr('src', selImg);
+			$(this).find('img').addClass('on');
+		}else if(btPlayerCh===1){
+			btPlayerCh++;
+			$('#player2 img').attr('src', selImg);
+			$(this).find('img').addClass('on');
+		}else {
+			alert('캐릭터 선정이 완료되었습니다.');
+		}
+	});
+}
+
 vegas.gameS = function(){
 	
 	// 게임 시작
 	$('.startBtn').click(function() {
+		playerSelect(); //캐릭터 선택
+	});
+
+	$('.playChBtn').click(function(){
+		$('.playerArea').css('opacity',1);
+		$('.playerSelect').hide();
+		$('.gameArea').show();
 		bettingS(bettingTotal); // 최초 배당 금액 배분(10만불)
-		$(this).hide(); // 시작 버튼 감추기
+		$('.startBtn').hide(); // 시작 버튼 감추기
 		$('.comment').hide();
 		$('.startDice').show();
 		$('.gAreaIn').show();
+		$('.player').show();
+		$('.diceWrap').hide(); //인트로 주사위 감춤
+		$('.dice').css('opacity',1); //게임용 주사위 등장
 	});
 
 	// 주사위 굴리기
