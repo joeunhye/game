@@ -121,7 +121,6 @@ function reBetting() {
 	$('.gAreaIn li .btPlayer').remove();
 	$('.reStart').hide();
 	$('.startDice').show();
-	
 }
 
 // 게임 재시작(완전 초기화)
@@ -162,6 +161,7 @@ function playerSelect() {
 			btPlayerCh++;
 			$('#player1 img').attr('src', selImg);
 			$(this).find('img').addClass('on');
+			console.log(btPlayerCh);
 		}else if(btPlayerCh===1){
 			btPlayerCh++;
 			$('#player2 img').attr('src', selImg);

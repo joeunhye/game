@@ -3,7 +3,7 @@ body {/* 3차원으로 보기 */transform-style: preserve-3d;/* 원근감 주기
 a:hover {cursor: url(images/pointer2.png), auto;}
 .intro {padding: 50px 0;}
 .introTitle {margin: 0;text-align: center;color: #fff; font-size: 50px;}
-.gameWrap {height: 100%; }
+.gameWrap {height: 100%;}
     .player {display:none; position: relative; text-align: center;background-color: rgba(0,0,0,0.3);}
     .player.left{float: left;}
     .player.right {float: right;}
