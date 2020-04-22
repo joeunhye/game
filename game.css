@@ -87,6 +87,6 @@ a:hover {cursor: url(images/pointer2.png), auto;}
     
 
 /*popup*/
-.popup {display: none; position: fixed; left:0; right:0; top:45%; bottom:0; width:500px; height: 300px; margin: auto; background-color: rgba(0,0,0,0.5); z-index: 99999;}
+.popup {display: none; position: fixed; left:0; right:0; top:5%; bottom:0; width:500px; height: 300px; margin: auto; background-color: rgba(0,0,0,0.5); z-index: 99999;}
     .popupIn {height:278px; margin:10px; border: 1px solid rgba(225,225,225,0.5);}
     .popupIn p {margin:90px 0; text-align: center; font-size: 18px; color:#fff;}

@@ -52,7 +52,9 @@ function bettingS(bettingTotal) {
 			$('#player2 .score').text(player2.bt);
 			$(this).parent().addClass('start'); //모든 플레이어 배팅 완료 유무 판별 클래스
 		}else{
-			alert('이미 배팅하셨습니다.');
+			//alert('이미 배팅하셨습니다.');
+			$('.popup').fadeIn();
+			$('.popupIn p').text("이미 배팅하셨습니다.");
 		}
 
 	});
@@ -158,7 +160,9 @@ function playerSelect() {
 			$('#player2 img').attr('src', selImg);
 			$(this).find('img').addClass('on');
 		}else {
-			alert('캐릭터 선정이 완료되었습니다.');
+			//alert('캐릭터 선정이 완료되었습니다.');
+			$('.popup').fadeIn();
+			$('.popupIn p').text("캐릭터 선정이 완료되었습니다.");
 		}
 	});
 }
@@ -185,6 +189,7 @@ function randomTxtS() {
  function popup() {
 	 $('.closeBtn').click(function() {
 		$('.popup').fadeOut();
+		$('.popupIn p').text("");
 	 });
  }
 
@@ -212,7 +217,9 @@ vegas.gameS = function(){
 	// 주사위 굴리기
 	$('.startDice').click(function() {
 		if(!$('.gAreaIn').hasClass('start')) {
-			alert('먼저 배팅을 진행해주세요.');
+			//alert('먼저 배팅을 진행해주세요.');
+			$('.popup').fadeIn();
+			$('.popupIn p').text("먼저 배팅을 진행해주세요.");
 		}else if(player1.bt <= 40000 || player2.bt <= 40000){
 			
 			//승자 확인
