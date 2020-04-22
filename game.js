@@ -31,10 +31,14 @@ function bettingS(bettingTotal) {
 
 		$('#player1').removeClass('win');
 		$('#player2').removeClass('win');
+		$('#player1').removeClass('lose');
+		$('#player2').removeClass('lose');
 		$('.gAreaIn li').removeClass();
 		$('.comment').hide();
 		$('#player1 .point').text('');
 		$('#player2 .point').text('');
+		$('#player1 .chat').empty();
+		$('#player2 .chat').empty();
 
 		if(btPlayerNum===0) {
 			btPlayerNum++;
@@ -76,6 +80,7 @@ function throwDice() {
 		player1.bt += betting;
 		player2.bt -= betting;
 		$('#player1').addClass('win');
+		$('#player2').addClass('lose');
 		$('.player1').addClass('on1');
 		$('.player2').removeClass('on2');
 		$('#player1 .chat').append('<span>' + '후훗...!!' + '</span>');
@@ -91,6 +96,7 @@ function throwDice() {
 		$('#player2 .point').text('+20000');
 		player1.bt -= betting;
 		player2.bt += betting;
+		$('#player1').addClass('lose');
 		$('#player2').addClass('win');
 		$('.player1').removeClass('on1');
 		$('.player2').addClass('on2');
@@ -134,6 +140,8 @@ function reStart() {
 	$('.gAreaIn li').removeClass();
 	$('#player1').removeClass('win');
 	$('#player2').removeClass('win');
+	$('#player1').removeClass('lose');
+	$('#player2').removeClass('lose');
 	$('.gAreaIn li .btPlayer').remove();
 	$('.reStart').hide();
 	$('.startDice').show();
@@ -221,9 +229,11 @@ vegas.gameS = function(){
 				$('.comment').show();
 				$('.comment p').text('player1 승리!');
 				$('#player1').addClass('win');
+				$('#player2').addClass('lose');
 			}else if(player1.bt < player2.bt) {
 				$('.comment').show();
 				$('.comment p').text('player2 승리!');
+				$('#player1').addClass('lose');
 				$('#player2').addClass('win');
 			}
 

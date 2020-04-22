@@ -9,8 +9,12 @@ a:hover {cursor: url(images/pointer2.png), auto;}
     .player.right {float: right;}
     #player1 h2 {color:#eb5118;}
     #player1.win {border-color:#eb5118;}
+    #player1.lose img {-webkit-filter: grayscale(100%);filter: gray;}
+    #player1.win img {-webkit-filter: grayscale(0%);filter: none;}
     #player2 h2 {color:#3e56de;}
     #player2.win {border-color:#3e56de;}
+    #player2.lose img {-webkit-filter: grayscale(100%);filter: gray;}
+    #player2.win img {-webkit-filter: grayscale(0%); filter: none;}
         .score {margin:30px 0; font-size: 39px; color: #ffb203;}
         .point {color:#989898;}
 .chat span{ position: absolute; top: -60px; background-color: #f0be25; border-radius: 20px;padding: 5px 20px; font-weight: 600;}
@@ -52,7 +56,7 @@ a:hover {cursor: url(images/pointer2.png), auto;}
 
             .comment {position: absolute; margin: auto; left: 0;right: 0;top: 0px;height:50px; text-align: center;}
             .comment p {margin:0;color: #fff;font-size: 30px;font-weight: 600;}
-            
+
 .playerArea {opacity:0;}
 .playerSelect {display:none;}
 .playerSelect p {color: #fff;font-size: 20px;text-align: center;}
@@ -72,7 +76,6 @@ a:hover {cursor: url(images/pointer2.png), auto;}
 	}
 }
 
-.diceWrap {}
 .dice_3d{transform-style: preserve-3d;width: 200px;height: 200px;position: relative;animation-name:Rot;/* 왓다갓다 */
     animation-direction:alternate;animation-duration:5s;animation-iteration-count:infinite;top:-130px;font-size:150px;text-align:center;line-height:200px; margin: auto;}
 .dice_3d div{width: 200px;height: 200px; position: absolute; left: 0; top: 0;opacity: 1; backface-visibility: hidden;}
