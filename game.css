@@ -17,7 +17,7 @@ a:hover {cursor: url(images/pointer2.png), auto;}
 .chat span:after { content: ""; position: absolute; bottom: -9px; left: 50px;border-width: 11px 10px 0;border-style: solid; border-color: #f0be25 transparent;display: block;width: 0;}
 #player1 .chat span{right: 0; } 
 #player2 .chat span{left: 0; } 
-    .dice {  opacity:0; position: relative; width:200px; height:200px;text-align: center; margin: 0 auto;}
+    .dice {opacity:0; position: relative; width:200px; height:200px;text-align: center; margin: 0 auto;}
     .dice p {}
         .diceNum {font-size: 0px; font-weight: 500;}
         .diceImg {position: absolute;top:35px;left:35px;}
@@ -42,6 +42,11 @@ a:hover {cursor: url(images/pointer2.png), auto;}
             .reStart a {display: block;text-decoration: none;color: #fff;}
             .reStart:hover {background-color: green;}
             .reStart:active {position: relative; top: 5px; margin-bottom: 5px; box-shadow: none;}
+
+            .closeBtn { margin: 40px auto 30px auto;text-decoration: none; color:#000; background-color: #fff; border-radius: 10px;box-shadow: 0 5px 0 rgb(218, 218, 218);font-weight: 600;width: 80px; display: block;text-align: center; height: 50px; line-height: 50px;font-size: 18px;}
+            .closeBtn:hover {background-color: rgb(212, 212, 212);}
+            .closeBtn:active {position: relative; top: 5px; margin-bottom: 5px; box-shadow: none;}
+
             .player1.on1 {border: 2px solid #eb5118;}
             .player2.on2 {border: 2px solid #3e56de;}
 
@@ -57,9 +62,6 @@ a:hover {cursor: url(images/pointer2.png), auto;}
 .playerSelect ul li img.on {transform: translateY(-35px);}
 
 /*3D dice*/
-
-.diceWrap {/* 3차원으로 보기 */}
-
  @keyframes Rot {
 	from {
 		transform:rotateX(0) rotateY(0) rotateZ(0);
@@ -69,6 +71,7 @@ a:hover {cursor: url(images/pointer2.png), auto;}
 	}
 }
 
+.diceWrap {}
 .dice_3d{
     transform-style: preserve-3d;width: 200px;height: 200px;position: relative;
 	animation-name:Rot;

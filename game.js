@@ -19,7 +19,6 @@ $(document).ready(function () {
 	vegas.gameS(); //game start!
 });
 
-
 // 카지노 배팅
 function bettingS(bettingTotal) {
 	$('.player .score').text(bettingTotal); //최초 금액 배당 표시
@@ -96,7 +95,6 @@ function throwDice() {
 		$('#player2 .chat').append('<span>' + '후훗...!!' + '</span>');
 		$('#player1 .chat').append('<span>' + '으으 분하군...!!' + '</span>');
 
-
 		reBetting();
 	}
 
@@ -110,11 +108,9 @@ function reBetting() {
 	btPlayerNum = 0; //배팅한 플레이어 초기화
 
 	$('.diceNum').text('');
-
 	$('.gAreaIn').removeClass('start');
 	$('.gAreaIn li').removeClass();
 	$('.gAreaIn li .btPlayer').remove();
-
 	$('.reStart').hide();
 	$('.startDice').show();
 	
@@ -130,7 +126,6 @@ function reStart() {
 	$('.diceNum').text('');
 	$('#player1 .score').text(player1.bt);
 	$('#player2 .score').text(player2.bt);
-
 	$('.player1').removeClass('on1');
 	$('.player2').removeClass('on2');
 	$('.gAreaIn').removeClass('start');
@@ -138,7 +133,6 @@ function reStart() {
 	$('#player1').removeClass('win');
 	$('#player2').removeClass('win');
 	$('.gAreaIn li .btPlayer').remove();
-
 	$('.reStart').hide();
 	$('.startDice').show();
 	
@@ -153,7 +147,6 @@ function playerSelect() {
 	$('.playerSelect li').click(function() {
 		let selImgIdx = $(this).index()+1;
 		let selImg = 'images/player' + selImgIdx + '.png';
-		
 
 		if(btPlayerCh===0) {
 			btPlayerCh++;
@@ -198,12 +191,10 @@ vegas.gameS = function(){
 			
 			//승자 확인
 			if(player1.bt > player2.bt) {
-				//alert('player1 승리!');
 				$('.comment').show();
 				$('.comment p').text('player1 승리!');
 				$('#player1').addClass('win');
 			}else if(player1.bt < player2.bt) {
-				//alert('player2 승리!');
 				$('.comment').show();
 				$('.comment p').text('player2 승리!');
 				$('#player2').addClass('win');
