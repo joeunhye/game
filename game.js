@@ -167,34 +167,31 @@ function playerSelect() {
 	});
 }
 
-//텍스트 랜덤 노출
+//캐릭터 텍스트 랜덤 노출
 function randomTxtS() {
-	let chatPopWin = ['으으 분하군...', '이런!!!' ];
-	let chatPopLose = ['후훗!!', '럭키가이~' ];
+	let chatPopWin = ['으으 분하군...', '이런!!!'];
+	let chatPopLose = ['후훗!!', '럭키가이~'];
 	let randomTxt=(Math.floor(Math.random()*6));
 	let txtOutputWin = chatPopWin[randomTxt];
 	let txtOutputLose = chatPopLose[randomTxt];
+
 	console.log(txtOutputWin);
 	console.log(txtOutputLose);
 
-	for(var i = 0; i<10; i ++) {
-		let randomN=(Math.floor(Math.random()*6));
-	}
-
-	$('.popup').fadeIn();
-    // $('.popupIn p').text(popTxtOut);
- 
  }
 
- function popup() {
-	 $('.closeBtn').click(function() {
+// 팝업
+function popupS() {
+	$('.closeBtn').click(function() {
 		$('.popup').fadeOut();
 		$('.popupIn p').text("");
-	 });
- }
+	});
+}
 
 vegas.gameS = function(){
-	popup();
+
+	popupS();
+
 	// 게임 시작
 	$('.startBtn').click(function() {
 		playerSelect(); //캐릭터 선택

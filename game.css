@@ -55,9 +55,9 @@ a:hover {cursor: url(images/pointer2.png), auto;}
 .playerArea {opacity:0;}
 .playerSelect {display:none;}
 .playerSelect p {color: #fff;font-size: 20px;text-align: center;}
-.playerSelect ul { overflow: hidden;padding: 30px 0;width: 1820px;margin: 0 auto;}
+.playerSelect ul { overflow: hidden;padding: 30px 0;width: 1500px;margin: 0 auto;}
 .playerSelect ul li {float: left;list-style-type: none;}  
-.playerSelect ul li img {transition: 0.3s all ease;}       
+.playerSelect ul li img {width:250px; transition: 0.3s all ease;}       
 .playerSelect ul li:hover img { transform: translateY(-15px);}
 .playerSelect ul li img.on {transform: translateY(-35px);}
 
@@ -87,6 +87,6 @@ a:hover {cursor: url(images/pointer2.png), auto;}
     
 
 /*popup*/
-.popup {display: none; position: fixed; left:0; right:0; top:5%; bottom:0; width:500px; height: 300px; margin: auto; background-color: rgba(0,0,0,0.5); z-index: 99999;}
+.popup {display: none; position: fixed; left:0; right:0; top:5%; bottom:0; width:500px; height: 300px; margin: auto; background-color: rgba(0,0,0,0.7); z-index: 99999;}
     .popupIn {height:278px; margin:10px; border: 1px solid rgba(225,225,225,0.5);}
     .popupIn p {margin:90px 0; text-align: center; font-size: 18px; color:#fff;}
