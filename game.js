@@ -35,6 +35,7 @@ function bettingS(bettingTotal) {
 		$('#player2').removeClass('lose');
 		$('.gAreaIn li').removeClass();
 		$('.comment').hide();
+		$('.point').removeClass('on');
 		$('#player1 .point').text('');
 		$('#player2 .point').text('');
 		$('#player1 .chat').empty();
@@ -75,6 +76,7 @@ function throwDice() {
 		//console.log('배팅1 당첨');
 		$('.comment').show();
 		$('.comment p').text('배팅1 당첨!');
+		$('.point').addClass('on');
 		$('#player1 .point').text('+20000');
 		$('#player2 .point').text('-20000');
 		player1.bt += betting;
@@ -92,6 +94,7 @@ function throwDice() {
 		//console.log('배팅2 당첨');
 		$('.comment').show();
 		$('.comment p').text('배팅2 당첨!');
+		$('.point').addClass('on');
 		$('#player1 .point').text('-20000');
 		$('#player2 .point').text('+20000');
 		player1.bt -= betting;
@@ -156,16 +159,19 @@ function playerSelect() {
 	$('.playerSelect li').click(function() {
 		let selImgIdx = $(this).index()+1;
 		let selImg = 'images/player' + selImgIdx + '.png';
+		// $(this).siblings().addClass('noChoice');
 
 		if(btPlayerCh===0) {
 			btPlayerCh++;
 			$('#player1 img').attr('src', selImg);
 			$(this).find('img').addClass('on');
+			
 			console.log(btPlayerCh);
 		}else if(btPlayerCh===1){
 			btPlayerCh++;
 			$('#player2 img').attr('src', selImg);
 			$(this).find('img').addClass('on');
+			console.log(btPlayerCh);
 		}else {
 			$('.popup').fadeIn();
 			$('.popupIn p').text("캐릭터 선정이 완료되었습니다.");
@@ -178,6 +184,7 @@ function randomTxtS() {
 	let chatPopWin = ['으으 분하군...', '이런!!!'];
 	let chatPopLose = ['후훗!!', '럭키가이~'];
 	let randomTxt=(Math.floor(Math.random()*6));
+	console.log(randomTxt);
 	let txtOutputWin = chatPopWin[randomTxt];
 	let txtOutputLose = chatPopLose[randomTxt];
 

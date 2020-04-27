@@ -1,10 +1,10 @@
-html,body {height: 100%;margin:0;background-image: radial-gradient(circle, #061b08, #183c1c, #204620);cursor: url(images/pointer1.png), auto;}
+html,body {height: 100%;margin:0;background-image: radial-gradient(circle, #204620, #183c1c, #061b08);cursor: url(images/pointer1.png), auto;}
 body {/* 3차원으로 보기 */transform-style: preserve-3d;/* 원근감 주기 400 ~ 2000 */perspective: 2000px;}
 a:hover {cursor: url(images/pointer2.png), auto;}
 .intro {padding: 50px 0;}
 .introTitle {margin: 0;text-align: center;color: #fff; font-size: 50px;}
 .gameWrap {height: 100%;}
-    .player {display:none; position: relative; text-align: center;background-color: rgba(0,0,0,0.3);}
+    .player {display:none; position: relative; text-align: center;}
     .player.left{float: left;}
     .player.right {float: right;}
     #player1 h2 {color:#eb5118;}
@@ -16,8 +16,19 @@ a:hover {cursor: url(images/pointer2.png), auto;}
     #player2.lose img {-webkit-filter: grayscale(100%);filter: gray;}
     #player2.win img {-webkit-filter: grayscale(0%); filter: none;}
         .score {margin:30px 0; font-size: 39px; color: #ffb203;}
-        .point {color:#989898;}
-.chat span{ position: absolute; top: -60px; background-color: #f0be25; border-radius: 20px;padding: 5px 20px; font-weight: 600;}
+        .point {position: absolute; top:-70px; left: 0; right: 0; margin: auto; width:105px; font-size: 30px; color:#cbcbcb;transition: 0.3s all ease; opacity: 0;}
+        .point.on {animation: pointAni 1s linear forwards;}
+
+        /*point ani*/
+        @keyframes pointAni {
+            from {
+                transform: translate(6px, -0px); opacity: 0;
+            }
+            to {
+                transform: translate(6px, -35px); opacity: 1;
+            }
+        }
+.chat span{ position: absolute; top: -35px; background-color: #f0be25; border-radius: 20px;padding: 5px 20px; font-weight: 600;}
 .chat span:after {content: ""; position: absolute; bottom: -9px; left: 50px;border-width: 11px 10px 0;border-style: solid; border-color: #f0be25 transparent;display: block;width: 0;}
 #player1 .chat span{right: 0;} 
 #player2 .chat span{left: 0;} 
@@ -62,12 +73,12 @@ a:hover {cursor: url(images/pointer2.png), auto;}
 .playerSelect p {color: #fff;font-size: 20px;text-align: center;}
 .playerSelect ul {overflow: hidden;padding: 30px 0;width: 1500px;margin: 0 auto;}
 .playerSelect ul li {float: left;list-style-type: none;}  
-.playerSelect ul li img {width:250px; transition: 0.3s all ease;}       
+.playerSelect ul li img {width:250px; transition: 0.3s all ease;-webkit-filter: grayscale(100%);filter: gray;}       
 .playerSelect ul li:hover img {transform: translateY(-15px);}
-.playerSelect ul li img.on {transform: translateY(-35px);}
+.playerSelect ul li img.on {transform: translateY(-35px);-webkit-filter: grayscale(0%);filter: none;}
 
 /*3D dice*/
- @keyframes Rot {
+@keyframes Rot {
 	from {
 		transform: rotateX(0) rotateY(0) rotateZ(0);
 	}
