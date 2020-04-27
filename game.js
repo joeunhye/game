@@ -159,13 +159,11 @@ function playerSelect() {
 	$('.playerSelect li').click(function() {
 		let selImgIdx = $(this).index()+1;
 		let selImg = 'images/player' + selImgIdx + '.png';
-		// $(this).siblings().addClass('noChoice');
 
 		if(btPlayerCh===0) {
 			btPlayerCh++;
 			$('#player1 img').attr('src', selImg);
 			$(this).find('img').addClass('on');
-			
 			console.log(btPlayerCh);
 		}else if(btPlayerCh===1){
 			btPlayerCh++;
