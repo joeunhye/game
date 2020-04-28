@@ -88,11 +88,9 @@ a:hover {cursor: url(images/pointer2.png), auto;}
 	}
 }
 .diceWrap {perspective: 2000px;}
-.dice_3d{transform-style: preserve-3d;width: 200px;height: 200px;position: relative;animation-name:Rot;/* 왓다갓다 */
+.dice_3d{transform-style: preserve-3d;width: 200px;height: 200px;position: relative;animation-name:Rot;
     animation-direction:alternate;animation-duration:5s;animation-iteration-count:infinite;top:-130px;font-size:150px;text-align:center;line-height:200px; margin: auto;}
 .dice_3d div{width: 200px;height: 200px; position: absolute; left: 0; top: 0;opacity: 1; backface-visibility: hidden;}
-/*.dice_3d {transform-style: preserve-3d;perspective: 2000px;}*/
-/*.dice_3d div {position: absolute;top: 72px;left: 0px;width: 200px; height: 200px;background-color: #fff;border: 1px solid #ddd; opacity: 1;}*/
 .dice_3d .dice1 {transform: rotateY(0deg) translate3d(0, 0, 100px);}
 .dice_3d .dice2 {transform: rotateY(90deg) translate3d(0, 0, 100px);}
 .dice_3d .dice3 {transform: rotateY(180deg) translate3d(0, 0, 100px);}
