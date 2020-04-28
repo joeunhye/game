@@ -19,6 +19,7 @@ let btPlayerCh = 0; //선택된 캐릭터 수
 $(document).ready(function () {
 	vegas.gameS(); //game start!
 	randomTxtWin();
+	randomTxtLose();
 });
 
 // 카지노 배팅

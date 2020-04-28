@@ -38,8 +38,8 @@ a:hover {cursor: url(images/pointer2.png), auto;}
         .diceImg {position: absolute;top:35px;left:35px;}
     .gameArea {position: absolute; margin: auto;left: 0; right: 0;clear: both;padding: 50px 0 0; width: 1300px;height:380px; margin: 0 auto; overflow: hidden;}
         .buttonArea {height:100px;}
-        .playChBtn { margin: 80px auto 30px auto;text-decoration: none; color:#fff; background-color: #f3218a; border-radius: 10px;box-shadow: 0 5px 0 #c91e73;font-weight: 600;width: 150px; display: block;text-align: center; height: 50px; line-height: 50px;font-size: 20px;}
-        .playChBtn:hover {background-color: #d11e78;}
+        .playChBtn { margin: 80px auto 30px auto;text-decoration: none; color:#fff; background-color: #f3218a; border-radius: 10px;box-shadow: 0 5px 0 #a71b60;font-weight: 600;width: 150px; display: block;text-align: center; height: 50px; line-height: 50px;font-size: 20px;}
+        .playChBtn:hover {background-color: #d42a7f;}
         .playChBtn:active {position: relative; top: 5px; margin-bottom: 5px; box-shadow: none;}
 
             .startBtn { margin: 40px auto 30px auto;text-decoration: none; color:#fff; background-color: #eb5118; border-radius: 10px;box-shadow: 0 5px 0 #af380c;font-weight: 600;width: 150px; display: block;text-align: center; height: 50px; line-height: 50px;font-size: 20px;}
@@ -84,10 +84,10 @@ a:hover {cursor: url(images/pointer2.png), auto;}
 		transform: rotateX(0) rotateY(0) rotateZ(0);
 	}
 	to {
-		transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg);
+		transform: rotateX(360deg) rotateY(280deg) rotateZ(350deg);
 	}
 }
-
+.diceWrap {perspective: 2000px;}
 .dice_3d{transform-style: preserve-3d;width: 200px;height: 200px;position: relative;animation-name:Rot;/* 왓다갓다 */
     animation-direction:alternate;animation-duration:5s;animation-iteration-count:infinite;top:-130px;font-size:150px;text-align:center;line-height:200px; margin: auto;}
 .dice_3d div{width: 200px;height: 200px; position: absolute; left: 0; top: 0;opacity: 1; backface-visibility: hidden;}
