@@ -18,7 +18,7 @@ a:hover {cursor: url(images/pointer2.png), auto;}
         .point.on {animation: pointAni 0.5s linear forwards;}
 
         /*point ani*/
-        @keyframes pointAni {
+        @keyframes pointAni { 
             from {
                 transform: translate(6px, -0px); opacity: 0;
             }
