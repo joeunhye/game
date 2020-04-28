@@ -177,19 +177,29 @@ function playerSelect() {
 	});
 }
 
-//캐릭터 텍스트 랜덤 노출
-function randomTxtS() {
-	let chatPopWin = ['으으 분하군...', '이런!!!'];
-	let chatPopLose = ['후훗!!', '럭키가이~'];
-	let randomTxt=(Math.floor(Math.random()*6));
+//캐릭터 텍스트 랜덤 노출 - 득
+function randomTxtWin() {
+	let chatPopWin = ['후훗!!', '럭키가이~'];
+	let randomTxt=(Math.floor(Math.random()*2));
 	console.log(randomTxt);
 	let txtOutputWin = chatPopWin[randomTxt];
+	// console.log(txtOutputWin);
+	return txtOutputWin;
+}
+
+let txtWinS = randomTxtWin();
+
+ //캐릭터 텍스트 랜덤 노출 - 실
+function randomTxtLose() {
+	let chatPopLose = ['으으 분하군...', '이런!!!'];
+	let randomTxt=(Math.floor(Math.random()*2));
+	console.log(randomTxt);
 	let txtOutputLose = chatPopLose[randomTxt];
+	//console.log(txtOutputLose);
+	return txtOutputLose;
+}
 
-	console.log(txtOutputWin);
-	console.log(txtOutputLose);
-
- }
+let txtLoseS = randomTxtLose();
 
 // 팝업
 function popupS() {
