@@ -14,7 +14,7 @@ a:hover {cursor: url(images/pointer2.png), auto;}
     #player2.lose img {-webkit-filter: grayscale(100%);filter: gray;}
     #player2.win img {-webkit-filter: grayscale(0%); filter: none;}
         .score {margin:20px 0 30px 0; font-size: 39px; font-weight: 600; color: #ffb203;}
-        .point {position: absolute; top:-70px; left: 0; right: 0; margin: auto; width:105px; font-size: 30px; color:#cbcbcb;transition: 0.3s all ease; opacity: 0;}
+        .point {position: absolute; top:-70px; left: 0; right: 0; margin: auto; width:105px; font-size: 30px; font-style: italic; color:#e2e2e2; transition: 0.3s all ease; opacity: 0;}
         .point.on {animation: pointAni 0.5s linear forwards;}
 
         /*point ani*/
@@ -38,7 +38,7 @@ a:hover {cursor: url(images/pointer2.png), auto;}
         .diceImg {position: absolute;top:35px;left:35px;}
     .gameArea {position: absolute; margin: auto;left: 0; right: 0;clear: both;padding: 50px 0 0; width: 1300px;height:380px; margin: 0 auto; overflow: hidden;}
         .buttonArea {height:100px;}
-        .playChBtn { margin: 20px auto 30px auto;text-decoration: none; color:#fff; background-color: #f3218a; border-radius: 10px;box-shadow: 0 5px 0 #c91e73;font-weight: 600;width: 150px; display: block;text-align: center; height: 50px; line-height: 50px;font-size: 20px;}
+        .playChBtn { margin: 80px auto 30px auto;text-decoration: none; color:#fff; background-color: #f3218a; border-radius: 10px;box-shadow: 0 5px 0 #c91e73;font-weight: 600;width: 150px; display: block;text-align: center; height: 50px; line-height: 50px;font-size: 20px;}
         .playChBtn:hover {background-color: #d11e78;}
         .playChBtn:active {position: relative; top: 5px; margin-bottom: 5px; box-shadow: none;}
 
@@ -50,20 +50,20 @@ a:hover {cursor: url(images/pointer2.png), auto;}
             .startDice:hover {background-color: #2d7bdb;}
             .startDice:active {position: relative; top: 5px; margin-bottom: 5px; box-shadow: none;}
             .gAreaIn {display: none; position: absolute;margin: auto; top: 0;left: 0;right: 0; bottom: -105px; height: 150px;overflow: hidden; width: 960px; padding: 0;}
-            .gAreaIn li {float:left;width: 140px;height: 140px;margin: 0 10px; border:3px solid #ddd; list-style-type: none;text-align: center; background-color: #1a611a;box-sizing: border-box;color:#fff;}
+            .gAreaIn li {float:left;width: 140px;height: 140px;margin: 0 10px; border:3px solid #1a611a; list-style-type: none;text-align: center; background-color: #1a611a;box-sizing: border-box;color:#fff; transition: 0.3s all ease;}
+            .gAreaIn li:hover {border-color:#ffb203;}
+            .gAreaIn li.on {border-color:#ffb203;}
             .gAreaIn li p {font-weight:600;color: #ffb203;}
+            .gAreaIn li span {font-size: 18px; font-weight: 600;}
 
             .reStart {display: none;margin: 20px auto 30px auto;text-decoration: none; font-weight: 600;width: 150px; background-color: #168b16;border-radius: 10px;box-shadow: 0 5px 0 #156f15;text-align: center; height: 50px; line-height: 50px;font-size: 20px;}
             .reStart a {display: block;text-decoration: none;color: #fff;}
             .reStart:hover {background-color: green;}
             .reStart:active {position: relative; top: 5px; margin-bottom: 5px; box-shadow: none;}
 
-            .closeBtn { margin: 40px auto 30px auto;text-decoration: none; color:#000; background-color: #fff; border-radius: 10px;box-shadow: 0 5px 0 rgb(218, 218, 218);font-weight: 600;width: 80px; display: block;text-align: center; height: 50px; line-height: 50px;font-size: 18px;}
+            .closeBtn { margin: 40px auto 30px auto;text-decoration: none; color:#000; background-color: #fff; border-radius: 10px;box-shadow: 0 5px 0 rgb(200, 199, 199);font-weight: 600;width: 80px; display: block;text-align: center; height: 50px; line-height: 50px;font-size: 18px;}
             .closeBtn:hover {background-color: rgb(212, 212, 212);}
             .closeBtn:active {position: relative; top: 5px; margin-bottom: 5px; box-shadow: none;}
-
-            .player1.on1 {border: 2px solid #eb5118;}
-            .player2.on2 {border: 2px solid #3e56de;}
 
             .comment {position: absolute; margin: auto; left: 0;right: 0;top: 0px;height:50px; text-align: center;}
             .comment p {margin:0;color: #fff;font-size: 30px;font-weight: 600;}
@@ -71,11 +71,12 @@ a:hover {cursor: url(images/pointer2.png), auto;}
 .playerArea {opacity:0;}
 .playerSelect {display:none;}
 .playerSelect p {color: #fff;font-size: 20px;text-align: center;}
-.playerSelect ul {overflow: hidden;padding: 30px 0;width: 1500px;margin: 0 auto;}
-.playerSelect ul li {float: left;list-style-type: none;}  
+.playerSelect ul {height:380px; padding: 30px 0;width: 1500px;margin: 0 auto;}
+.playerSelect ul li {float: left;list-style-type: none;transition: 0.3s all ease;}  
 .playerSelect ul li img {width:250px; transition: 0.3s all ease;-webkit-filter: grayscale(100%);filter: gray;}       
-.playerSelect ul li:hover img {transform: translateY(-15px);}
+.playerSelect ul li:hover img {transform: translateY(-15px);-webkit-filter: grayscale(0%);filter: none;}
 .playerSelect ul li img.on {transform: translateY(-35px);-webkit-filter: grayscale(0%);filter: none;}
+.playerSelect ul li span {display: block; width: 50px; height: 30px; margin: 0 auto; padding: 5px 0; text-align: center; font-weight: 600; font-size: 20px; color: #ffb203; border: 1px solid #ffb203;}
 
 /*3D dice*/
 @keyframes Rot {
