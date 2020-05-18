@@ -89,11 +89,11 @@ function throwDice() {
 		output();
 		winPlayer = players[0];
 		winner(winPlayer);
+		player1.bt += betting;
+		player2.bt -= betting;
 
 		$('#player1 .point').text('+20000');
 		$('#player2 .point').text('-20000');
-		player1.bt += betting;
-		player2.bt -= betting;
 		$('#player1').addClass('win');
 		$('#player2').addClass('lose');
 		$('.player1').addClass('on1');
@@ -108,11 +108,11 @@ function throwDice() {
 		output();
 		winPlayer = players[1];
 		winner(winPlayer);
-		
-		$('#player1 .point').text('-20000');
-		$('#player2 .point').text('+20000');
 		player1.bt -= betting;
 		player2.bt += betting;
+
+		$('#player1 .point').text('-20000');
+		$('#player2 .point').text('+20000');
 		$('#player1').addClass('lose');
 		$('#player2').addClass('win');
 		$('.player1').removeClass('on1');
