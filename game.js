@@ -45,24 +45,18 @@ function bettingS(bettingTotal) {
 
 		if(btPlayerNum===0) {
 			btPlayerNum++;
-			//playerS = players[0];
-			//console.log(playerS);
 			$(this).append('<span class="btPlayer">배팅' + btPlayerNum + '</span>');
 			$(this).addClass('player1');
 			$(this).addClass('on');
 			btIndex1 = bettingN;
 			$('#player1 .score').text(player1.bt);
-			//console.log(btIndex1);
 		}else if(btPlayerNum===1) {
 			btPlayerNum++;
-			//playerS = players[1];
-			//console.log(playerS);
 			$(this).append('<span class="btPlayer">배팅' + btPlayerNum + '</span>');
 			$(this).addClass('player2');
 			$(this).addClass('on');
 			btIndex2 = bettingN;
 			$('#player2 .score').text(player2.bt);
-			//console.log(btIndex2);
 
 			//모든 플레이어 배팅 완료 유무 판별 클래스
 			$(this).parent().addClass('start'); 
