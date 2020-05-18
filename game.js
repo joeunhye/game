@@ -14,12 +14,13 @@ let bettingN;
 let btIndex1;
 let btIndex2;
 let btPlayerCh = 0; //선택된 캐릭터 수
+let players = ['player1', 'player2'];
+let winPlayer;
 
 
 $(document).ready(function () {
 	vegas.gameS(); //game start!
-	randomTxtWin();
-	randomTxtLose();
+	
 });
 
 // 카지노 배팅
@@ -35,7 +36,6 @@ function bettingS(bettingTotal) {
 		$('#player2').removeClass('win');
 		$('#player1').removeClass('lose');
 		$('#player2').removeClass('lose');
-		//$('.gAreaIn li').removeClass();
 		$('.comment').hide();
 		$('.point').removeClass('on');
 		$('#player1 .point').text('');
@@ -45,21 +45,27 @@ function bettingS(bettingTotal) {
 
 		if(btPlayerNum===0) {
 			btPlayerNum++;
+			//playerS = players[0];
+			//console.log(playerS);
 			$(this).append('<span class="btPlayer">배팅' + btPlayerNum + '</span>');
 			$(this).addClass('player1');
 			$(this).addClass('on');
 			btIndex1 = bettingN;
-			//player1.bt = bettingTotal - betting;
 			$('#player1 .score').text(player1.bt);
+			//console.log(btIndex1);
 		}else if(btPlayerNum===1) {
 			btPlayerNum++;
+			//playerS = players[1];
+			//console.log(playerS);
 			$(this).append('<span class="btPlayer">배팅' + btPlayerNum + '</span>');
 			$(this).addClass('player2');
 			$(this).addClass('on');
 			btIndex2 = bettingN;
-			//player2.bt = bettingTotal - betting;
 			$('#player2 .score').text(player2.bt);
-			$(this).parent().addClass('start'); //모든 플레이어 배팅 완료 유무 판별 클래스
+			//console.log(btIndex2);
+
+			//모든 플레이어 배팅 완료 유무 판별 클래스
+			$(this).parent().addClass('start'); 
 		}else{
 			$('.popup').fadeIn();
 			$('.popupIn p').text("이미 배팅하셨습니다.");
@@ -76,11 +82,14 @@ function throwDice() {
 	$('.diceNum').text(randomdice);
 	$('.player .chat span').hide();
 
-	if(randomdice == btIndex1){
-		//console.log('배팅1 당첨');
-		$('.comment').show();
-		$('.comment p').text('배팅1 당첨!');
-		$('.point').addClass('on');
+	randomTxtWin();
+	randomTxtLose();
+
+	if(randomdice == btIndex1){ //player1 당첨
+		output();
+		winPlayer = players[0];
+		winner(winPlayer);
+
 		$('#player1 .point').text('+20000');
 		$('#player2 .point').text('-20000');
 		player1.bt += betting;
@@ -92,14 +101,14 @@ function throwDice() {
 
 		$('#player1 .chat').append('<span>' + txtWinS + '</span>');
 		$('#player2 .chat').append('<span>' + txtLoseS + '</span>');
-		
-		reBetting();
 
-	}else if(randomdice == btIndex2){
-		//console.log('배팅2 당첨');
-		$('.comment').show();
-		$('.comment p').text('배팅2 당첨!');
-		$('.point').addClass('on');
+		reBetting(); //재배팅
+
+	}else if(randomdice == btIndex2){ //player2 당첨
+		output();
+		winPlayer = players[1];
+		winner(winPlayer);
+		
 		$('#player1 .point').text('-20000');
 		$('#player2 .point').text('+20000');
 		player1.bt -= betting;
@@ -112,12 +121,21 @@ function throwDice() {
 		$('#player1 .chat').append('<span>' + txtLoseS + '</span>');
 		$('#player2 .chat').append('<span>' + txtWinS + '</span>');
 
-		reBetting();
+		reBetting(); //재배팅
 	}
 
 	$('#player1 .score').text(player1.bt); 
 	$('#player2 .score').text(player2.bt);
 
+}
+
+function output() {
+	$('.comment').show();
+	$('.point').addClass('on');
+}
+
+function winner(winPlayer) {
+	$('.comment p').text(winPlayer + ' 당첨!');
 }
 
 // 게임 재배팅(일부 초기화)
@@ -171,13 +189,11 @@ function playerSelect() {
 			$('#player1 img').attr('src', selImg);
 			$(this).find('img').addClass('on');
 			$(this).append('<span>' + '1p' + '</span>');
-			//console.log(btPlayerCh);
 		}else if(btPlayerCh===1){
 			btPlayerCh++;
 			$('#player2 img').attr('src', selImg);
 			$(this).find('img').addClass('on');
 			$(this).append('<span>' + '2p' + '</span>');
-			//console.log(btPlayerCh);
 		}else {
 			$('.popup').fadeIn();
 			$('.popupIn p').text("캐릭터 선정이 완료되었습니다.");
@@ -188,7 +204,8 @@ function playerSelect() {
 //캐릭터 텍스트 랜덤 노출 - 득
 function randomTxtWin() {
 	let chatPopWin = ['후훗!!', '럭키가이~'];
-	let randomTxt=(Math.floor(Math.random()*2));
+	let randomTxt=(Math.floor(Math.random()*chatPopWin.length));
+	//console.log(randomTxt);
 	let txtOutputWin = chatPopWin[randomTxt];
 
 	return txtOutputWin;
@@ -199,7 +216,8 @@ let txtWinS = randomTxtWin();
  //캐릭터 텍스트 랜덤 노출 - 실
 function randomTxtLose() {
 	let chatPopLose = ['으으 분하군...', '이런!!!'];
-	let randomTxt=(Math.floor(Math.random()*2));
+	let randomTxt=(Math.floor(Math.random()*chatPopLose.length));
+	//console.log(randomTxt);
 	let txtOutputLose = chatPopLose[randomTxt];
 
 	return txtOutputLose;
