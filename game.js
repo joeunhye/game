@@ -77,8 +77,8 @@ function throwDice() {
 	$('.diceNum').text(randomdice);
 	$('.player .chat span').hide();
 
-	randomTxtWin();
-	randomTxtLose();
+	//randomTxtWin();
+	//randomTxtLose();
 
 	if(randomdice == btIndex1){ //player1 당첨
 		output();
@@ -86,7 +86,7 @@ function throwDice() {
 		losePlayer = players[1];
 		winner(winPlayer);
 		loser(losePlayer);
-		
+
 		player1.bt += betting;
 		player2.bt -= betting;
 		reBetting(); //재배팅
@@ -119,6 +119,9 @@ function winner(winPlayer) {
 	$('.' + winPlayer).addClass('on1');
 	$('#' + winPlayer).find('.point').text('+20000');
 	$('#' + winPlayer).addClass('win');
+
+	randomTxtWin();
+	let txtWinS = randomTxtWin();
 	$('#' + winPlayer).find('.chat').append('<span>' + txtWinS + '</span>');
 
 }
@@ -128,6 +131,9 @@ function loser(losePlayer) {
 	$('.' + losePlayer).addClass('on2');
 	$('#' + losePlayer).find('.point').text('-20000');
 	$('#' + losePlayer).addClass('lose');
+
+	randomTxtLose();
+	let txtLoseS = randomTxtLose();
 	$('#' + losePlayer).find('.chat').append('<span>' + txtLoseS + '</span>');
 }
 
@@ -198,25 +204,25 @@ function playerSelect() {
 function randomTxtWin() {
 	let chatPopWin = ['후훗!!', '럭키가이~'];
 	let randomTxt=(Math.floor(Math.random()*chatPopWin.length));
-	//console.log(randomTxt);
 	let txtOutputWin = chatPopWin[randomTxt];
+	//console.log(txtOutputWin);
 
 	return txtOutputWin;
 }
 
-let txtWinS = randomTxtWin();
+//let txtWinS = randomTxtWin();
 
  //캐릭터 텍스트 랜덤 노출 - 실
 function randomTxtLose() {
 	let chatPopLose = ['으으 분하군...', '이런!!!'];
 	let randomTxt=(Math.floor(Math.random()*chatPopLose.length));
-	//console.log(randomTxt);
 	let txtOutputLose = chatPopLose[randomTxt];
+	//console.log(txtOutputLose);
 
 	return txtOutputLose;
 }
 
-let txtLoseS = randomTxtLose();
+//let txtLoseS = randomTxtLose();
 
 // 팝업
 function popupS() {
