@@ -15,7 +15,8 @@ let btIndex1;
 let btIndex2;
 let btPlayerCh = 0; //선택된 캐릭터 수
 let players = ['player1', 'player2'];
-let winPlayer;
+let winPlayer; //이긴 플레이어
+let losePlayer; //진 플레이어
 
 
 $(document).ready(function () {
@@ -82,38 +83,44 @@ function throwDice() {
 	if(randomdice == btIndex1){ //player1 당첨
 		output();
 		winPlayer = players[0];
+		losePlayer = players[1];
 		winner(winPlayer);
+		loser(losePlayer);
+
 		player1.bt += betting;
 		player2.bt -= betting;
 
-		$('#player1 .point').text('+20000');
-		$('#player2 .point').text('-20000');
-		$('#player1').addClass('win');
-		$('#player2').addClass('lose');
-		$('.player1').addClass('on1');
-		$('.player2').removeClass('on2');
+		//$('#player1 .point').text('+20000');
+		//$('#player2 .point').text('-20000');
+		//$('#player1').addClass('win');
+		//$('#player2').addClass('lose');
+		//$('.player1').addClass('on1');
+		//$('.player2').removeClass('on2');
 
-		$('#player1 .chat').append('<span>' + txtWinS + '</span>');
-		$('#player2 .chat').append('<span>' + txtLoseS + '</span>');
+		//$('#player1 .chat').append('<span>' + txtWinS + '</span>');
+		//$('#player2 .chat').append('<span>' + txtLoseS + '</span>');
 
 		reBetting(); //재배팅
 
 	}else if(randomdice == btIndex2){ //player2 당첨
 		output();
 		winPlayer = players[1];
+		losePlayer = players[0];
 		winner(winPlayer);
+		loser(losePlayer);
+
 		player1.bt -= betting;
 		player2.bt += betting;
 
-		$('#player1 .point').text('-20000');
-		$('#player2 .point').text('+20000');
-		$('#player1').addClass('lose');
-		$('#player2').addClass('win');
-		$('.player1').removeClass('on1');
-		$('.player2').addClass('on2');
+		//$('#player1 .point').text('-20000');
+		//$('#player2 .point').text('+20000');
+		//$('#player1').addClass('lose');
+		//$('#player2').addClass('win');
+		//$('.player1').removeClass('on1');
+		//$('.player2').addClass('on2');
 
-		$('#player1 .chat').append('<span>' + txtLoseS + '</span>');
-		$('#player2 .chat').append('<span>' + txtWinS + '</span>');
+		//$('#player1 .chat').append('<span>' + txtLoseS + '</span>');
+		//$('#player2 .chat').append('<span>' + txtWinS + '</span>');
 
 		reBetting(); //재배팅
 	}
@@ -128,8 +135,22 @@ function output() {
 	$('.point').addClass('on');
 }
 
+// 이긴 플레이어
 function winner(winPlayer) {
 	$('.comment p').text(winPlayer + ' 당첨!');
+	$('#' + winPlayer).find('.point').text('+20000');
+	$('#' + winPlayer).addClass('win');
+	$('.' + winPlayer).addClass('on1');
+	$('#' + winPlayer).find('.chat').append('<span>' + txtWinS + '</span>');
+
+}
+
+// 진 플레이어
+function loser(losePlayer) {
+	$('#' + losePlayer).find('.point').text('-20000');
+	$('#' + losePlayer).addClass('lose');
+	$('.' + losePlayer).addClass('on2');
+	$('#' + losePlayer).find('.chat').append('<span>' + txtLoseS + '</span>');
 }
 
 // 게임 재배팅(일부 초기화)
