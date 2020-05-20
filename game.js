@@ -77,9 +77,6 @@ function throwDice() {
 	$('.diceNum').text(randomdice);
 	$('.player .chat span').hide();
 
-	//randomTxtWin();
-	//randomTxtLose();
-
 	if(randomdice == btIndex1){ //player1 당첨
 		output();
 		winPlayer = players[0];
